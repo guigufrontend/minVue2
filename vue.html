@@ -1,0 +1,30 @@
+<header>
+    <meta charset="utf-8"/>
+</header>
+<div id='app'>
+    <p>{{counter}}</p>
+    <p k-text='counter'></p>
+    <p k-html='html'></p>
+    <p>{{value}}</p>
+    <input k-model='value'></input>
+    <button @click='clickHandler'>add</button>
+</div>
+<script src="./pxVue/pxVue.js"></script>
+<script>
+    const app = new PxVue({
+        el:'#app',
+        data:{
+            counter:1,
+            html:"<div style='color:red'>pxpxpx<div>",
+            value:1
+        },
+        methods:{
+            clickHandler(){
+                this.counter++
+            }
+        }
+    })
+    // setInterval(()=>{
+    //     app.counter++
+    // }, 1000)
+</script>
